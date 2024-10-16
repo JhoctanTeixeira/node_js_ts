@@ -1,0 +1,28 @@
+{
+  "contatos": [
+    {
+      "id": "1",
+      "nome": "Fulano 1",
+      "telefone": "991823776",
+      "dataNascimento": "1990-01-01"
+    },
+    {
+      "id": "2",
+      "nome": "Fulano 2",
+      "telefone": "991823776",
+      "dataNascimento": "1990-01-01"
+    },
+    {
+      "id": "cd00",
+      "nome": "Fulano 3",
+      "telefone": "991823776",
+      "dataNascimento": "1990-01-01"
+    },
+    {
+      "id": "9679",
+      "nome": "Jhoctan de Deus Teixeira",
+      "telefone": "11991823776",
+      "dataNascimento": "2024-10-26"
+    }
+  ]
+}
