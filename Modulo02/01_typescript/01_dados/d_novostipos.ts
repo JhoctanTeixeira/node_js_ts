@@ -1,10 +1,14 @@
 type str = string | null;
 type n = number;
 type dispositivo = "PC" | "Tablet" | "Celular";
+
+
+export { imovel };
+
 type imovel = {
   area: n;
   local: str;
-  dispVenda: boolean;
+  dispVenda?: boolean;
 };
 
 type filtro = (busca: string) => boolean;
@@ -20,4 +24,7 @@ function executar() {
     }
   });
 }
+
+// let descricao
+
 executar();
