@@ -6,15 +6,18 @@ class Cnpj implements IDocumento {
   }
 
   set documento(d: string) {
-    if (d.length !== 14)throw new Error("CNPJ inválido, deve conter 14 digitos");
+    let validaCnpj: RegExp = /^[0-9]{14}/;
+    if (!validaCnpj.test(d))
+      throw new Error("CNPJ inválido, deve conter 14 digitos");
     this._documento = d;
   }
 
   get documento(): string {
     return this._documento;
   }
+  toString(): string {
+    return `CNPJ: ${this._documento}`;
+  }
 }
-
-console.log(new Cnpj("12345678900000"));
 
 export { Cnpj };

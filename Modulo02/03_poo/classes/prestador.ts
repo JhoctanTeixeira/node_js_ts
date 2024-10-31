@@ -1,4 +1,6 @@
+import { Sexo } from "../enum/sexo";
 import { IDocumento } from "../interfaces/documento";
+import { Cpf } from "./DocumentoCPF";
 
 class Prestador {
   // private _nome: string;
@@ -8,21 +10,18 @@ class Prestador {
 
   constructor(
     private nome: string,
-    private email: string,
-    private telefone: string,
+    private sexo: Sexo,
     private doc: IDocumento
   ) {}
 
   mostrarDados(): string;
   mostrarDados(titulo: string): string;
   mostrarDados(titulo?: string): string {
-    let resposta = `Nome: ${this.nome}\nEmail: ${this.email}\nTelefone ${this.telefone}\nDocumento: ${this.doc.documento}`;
+    let resposta = `Nome: ${this.nome}\nSexo: ${this.sexo}\nDocumento: ${this.doc}`;
     if (titulo) return `${titulo}\n\n${resposta}`;
 
     return resposta;
   }
 }
-
-console.log(new Prestador("José", "1@gmail.com", "11991823776", { documento: "12345678900" }).mostrarDados("Prestador"));
 
 export { Prestador };
