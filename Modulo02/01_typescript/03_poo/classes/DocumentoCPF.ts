@@ -1,3 +1,4 @@
+import { Utilitarios } from "../common/utils";
 import { IDocumento } from "../interfaces/documento";
 
 class Cpf implements IDocumento {
@@ -6,14 +7,34 @@ class Cpf implements IDocumento {
   }
 
   set documento(d: string) {
-    let validaCpf: RegExp = /^[0-9]{11}/;
+    try {
+      this.validar(d);
+      this._documento = d;
+
+      /* (async () => {
+        await this.validar(d);
+        this._documento = d;
+      })(); */
+      
+    } catch (error) {
+      throw new Error(error as string);
+    }
+
+    /*  let validaCpf: RegExp = /^[0-9]{11}/;
     if (!validaCpf.test(d))
       throw new Error("CNPJ inválido, deve conter 11 digitos");
-    this._documento = d;
+    this._documento = d; */
   }
 
   get documento(): string {
     return this._documento;
+  }
+
+  async validar(cpf: string) {
+    let b = await Utilitarios.validarCpf(cpf);
+    if ("OK" != b.status) {
+      throw new Error(b.message);
+    }
   }
 
   // public toString = (): string => {

@@ -14,10 +14,13 @@ class Prestador {
     private doc: IDocumento
   ) {}
 
-  mostrarDados(): string;
-  mostrarDados(titulo: string): string;
-  mostrarDados(titulo?: string): string {
-    let resposta = `Nome: ${this.nome}\nSexo: ${this.sexo}\nDocumento: ${this.doc}`;
+  async mostrarDados(): Promise<string>;
+  async mostrarDados(titulo: string): Promise<string>;
+  async mostrarDados(titulo?: string): Promise<string> {
+
+    let resposta = `Nome: ${this.nome}\nSexo: ${
+      this.sexo
+    }\nDocumento: ${await this.doc}`;
     if (titulo) return `${titulo}\n\n${resposta}`;
 
     return resposta;
