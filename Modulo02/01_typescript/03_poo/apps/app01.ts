@@ -1,22 +1,33 @@
-import { Cpf } from "../classes/DocumentoCPF";
+import { DocumentoCNPJ } from "../classes/documentocnpj";
+import { DocumentoCPF } from "../classes/documentocpf";
 import { Prestador } from "../classes/prestador";
-import { Sexo } from "../enum/sexo";
+import { PrestadorAutonomo } from "../classes/prestadorauto";
+import { Sexo } from "../enums/sexo";
 
 let prestador: Prestador = new Prestador(
-  "Jose da Silva",
-  Sexo.MASCULINO,
-  new Cpf("12345678900")
-);
+    'Jose Mauricio',
+    Sexo.MASCULINO,
+    new DocumentoCPF("71505845009"));
 
-async function main() {
-  try {
-    console.log("=================================");
-    console.log(await prestador.mostrarDados());
-    console.log("=================================");
-    console.log(await prestador.mostrarDados("Dados do Prestador"));
-  } catch (error) {
-    console.error(error);
-  }
-}
 
-main();
+let prestadorauto : PrestadorAutonomo = new PrestadorAutonomo(
+    'Maria', 
+    Sexo.FEMININO, 
+    new DocumentoCPF("71505845009"), 
+    "12345");
+
+    console.log(prestador.mostrarDados());
+    console.log();
+    
+    prestador = prestadorauto;
+
+    console.log(prestador.mostrarDados());
+
+
+// async function mostrar() {
+//     console.log(await prestador.mostrarDados());
+//     console.log();
+//     console.log(await prestador.mostrarDados("DADOS DO PRESTADOR"));
+// }
+
+// mostrar();

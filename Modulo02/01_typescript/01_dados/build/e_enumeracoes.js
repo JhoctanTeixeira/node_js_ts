@@ -1,11 +1,14 @@
 "use strict";
-// Tipos enumerados
+// tipos enumerados
 var Sexo;
 (function (Sexo) {
     Sexo[Sexo["Masculino"] = 0] = "Masculino";
     Sexo[Sexo["Feminino"] = 1] = "Feminino";
-    Sexo[Sexo["Outros"] = 2] = "Outros";
 })(Sexo || (Sexo = {}));
+/*
+    Quando atribuímos um ALIAS para os elementos da enumeração,
+    se for string, devemos atribuir para todos os elementos
+*/
 var DiasSemana;
 (function (DiasSemana) {
     DiasSemana["Domingo"] = "Domingo";
@@ -16,22 +19,27 @@ var DiasSemana;
     DiasSemana["Sexta"] = "Sexta-feira";
     DiasSemana["Sabado"] = "S\u00E1bado";
 })(DiasSemana || (DiasSemana = {}));
+/*
+    Se o ALIAS aplicado for numérico, este substituirá o valor do índice
+    na enumeração. Valores omitidos representam uma sequencia.
+*/
 var Estados;
 (function (Estados) {
     Estados[Estados["SP"] = 10] = "SP";
     Estados[Estados["RJ"] = 15] = "RJ";
     Estados[Estados["MT"] = 16] = "MT";
     Estados[Estados["MS"] = 17] = "MS";
-    Estados[Estados["BH"] = 20] = "BH";
+    Estados[Estados["BA"] = 20] = "BA";
     Estados[Estados["ES"] = 21] = "ES";
 })(Estados || (Estados = {}));
-let sexo = Sexo.Masculino;
-console.log(sexo); // 0
+// Sexo
+let sexo = Sexo.Feminino;
+console.log(sexo);
 let sexo1 = Sexo[Sexo.Masculino];
-console.log(sexo1); // Masculino
-// Dias da semana
+console.log(sexo1);
+//DiasSemana
 let dia = DiasSemana.Quarta;
-console.log(dia); // Quarta-feira
+console.log(dia);
 // Estados
 let estado = Estados.MS;
-console.log(estado); // Mato Grosso do Sul
+console.log(estado);

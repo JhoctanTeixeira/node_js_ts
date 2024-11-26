@@ -1,0 +1,1 @@
+export const dbpath = 'C:/Documentos/Projetos/PortoSeguro/Node_JS_TS/Modulo02/db/dbvendas.db';

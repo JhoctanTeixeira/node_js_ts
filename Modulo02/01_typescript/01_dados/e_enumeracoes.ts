@@ -1,39 +1,47 @@
-// Tipos enumerados
+// tipos enumerados
 enum Sexo {
-  Masculino,
-  Feminino,
-  Outros,
+    Masculino,
+    Feminino
 }
 
+/*
+    Quando atribuímos um ALIAS para os elementos da enumeração,
+    se for string, devemos atribuir para todos os elementos
+*/
 enum DiasSemana {
-  Domingo = "Domingo",
-  Segunda = "Segunda-feira",
-  Terca = "Terça-feira",
-  Quarta = "Quarta-feira",
-  Quinta = "Quinta-feira",
-  Sexta = "Sexta-feira",
-  Sabado = "Sábado",
+    Domingo = 'Domingo',
+    Segunda = 'Segunda-feira',
+    Terca = 'Terça-feira',
+    Quarta = 'Quarta-feira',
+    Quinta = 'Quinta-feira',
+    Sexta = 'Sexta-feira',
+    Sabado = 'Sábado'
 }
 
+/*
+    Se o ALIAS aplicado for numérico, este substituirá o valor do índice
+    na enumeração. Valores omitidos representam uma sequencia.
+*/
 enum Estados {
-  SP = 10,
-  RJ = 15,
-  MT,
-  MS,
-  BH = 20,
-  ES,
+    SP = 10,
+    RJ = 15,
+    MT,
+    MS,
+    BA = 20,
+    ES
 }
 
-let sexo = Sexo.Masculino;
-console.log(sexo); // 0
+// Sexo
+let sexo: Sexo = Sexo.Feminino;
+console.log(sexo);
 
 let sexo1 = Sexo[Sexo.Masculino];
-console.log(sexo1); // Masculino
+console.log(sexo1);
 
-// Dias da semana
+//DiasSemana
 let dia = DiasSemana.Quarta;
-console.log(dia); // Quarta-feira
+console.log(dia);
 
 // Estados
 let estado = Estados.MS;
-console.log(estado); // Mato Grosso do Sul
+console.log(estado);

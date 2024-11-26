@@ -1,28 +1,35 @@
-function calcularMedia(a: number, b: number): number;
-function calcularMedia(a: number, b: number, c: number): number;
-function calcularMedia(a: number, b: number, c?: number): number {
-  if (!c) return (a + b) / 2;
-  return (a + b + c) / 3;
-}
-let m1 = calcularMedia(2, 4, 4);
+// a sobrecarga de funções é útil quando desejamos
+// fornecer mais de uma opção para a operação requerida
+// obs.: não confundir com métodos contendo diferentes objetivos
 
-console.log(m1);
-
-function calcularPreco(preco: number): number;
-function calcularPreco(preco: number, imposto: number): number;
-function calcularPreco(preco: number, imposto: number, desconto: number): number;
-function calcularPreco(preco: number, imposto?: number, desconto?: number): number {
-
-  if (!imposto) return preco;
-  if (!desconto) return preco + (preco * imposto) / 100;
-  return preco + (preco * imposto) / 100 - (preco * desconto) / 100;
+function calcularSoma(a: number, b: number): number;
+function calcularSoma(a: number, b: number, c: number): number;
+function calcularSoma(a: number, b: number, c?: number): number {
+    if(c){
+        return a + b+ c;
+    } else {
+        return a + b;
+    }
 }
 
+let m1 = calcularSoma(2, 4);
+let m2 = calcularSoma(2, 4, 5);
 
-let preco1 = calcularPreco(100)
-let preco2 = calcularPreco(100, 10)
-let preco3 = calcularPreco(100, 10, 5)
+function calcularPreco(preco: number) : number;
+function calcularPreco(preco: number, imposto: number) : number;
+function calcularPreco(preco: number, imposto: number, desconto: number) : number;
+function calcularPreco(preco: number, imposto?: number, desconto?: number) : number{
+    return preco + (imposto ? imposto : 0) - (desconto ? desconto : 0);
+}
 
-console.log(preco1);
-console.log(preco2);
-console.log(preco3);
+let p1 = calcularPreco(1000);
+let p2 = calcularPreco(1000, 100);
+let p3 = calcularPreco(1000, 100, 75);
+
+console.log('Soma 1: ', m1);
+console.log('Soma 2: ', m2);
+
+console.log('Preço 1: ', p1);
+console.log('Preço 2: ', p2);
+console.log('Preço 3: ', p3);
+

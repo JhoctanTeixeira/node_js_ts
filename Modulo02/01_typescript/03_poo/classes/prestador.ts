@@ -1,30 +1,33 @@
-import { Sexo } from "../enum/sexo";
+import { Sexo } from "../enums/sexo";
 import { IDocumento } from "../interfaces/documento";
-import { Cpf } from "./DocumentoCPF";
 
-class Prestador {
-  // private _nome: string;
-  // private _email: string;
-  // private _telefone: string;
-  // private _cnpj: string;
+export  class Prestador {
+    
+    constructor(
+        private nome: string, 
+        private sexo: Sexo, 
+        private documento: IDocumento) {}
 
-  constructor(
-    private nome: string,
-    private sexo: Sexo,
-    private doc: IDocumento
-  ) {}
+        mostrarDados(): string;
+        mostrarDados(titulo: string): string;
+        mostrarDados(titulo?: string): string {
+    
+            let resposta: string = `Nome: ${this.nome}\nSexo: ${this.sexo}\nDocumento: ${this.documento}`;
+            if(titulo){
+                resposta = `${titulo}\n${resposta}`;
+            }
+            return resposta;
+        }        
 
-  async mostrarDados(): Promise<string>;
-  async mostrarDados(titulo: string): Promise<string>;
-  async mostrarDados(titulo?: string): Promise<string> {
+    // async mostrarDados(): Promise<string>;
+    // async mostrarDados(titulo: string): Promise<string>;
+    // async mostrarDados(titulo?: string): Promise<string> {
 
-    let resposta = `Nome: ${this.nome}\nSexo: ${
-      this.sexo
-    }\nDocumento: ${await this.doc}`;
-    if (titulo) return `${titulo}\n\n${resposta}`;
+    //     let resposta: string = `Nome: ${this.nome}\nSexo: ${this.sexo}\nDocumento: ${await this.documento}`;
+    //     if(titulo){
+    //         resposta = `${titulo}\n\n${resposta}`;
+    //     }
+    //     return resposta;
+    // }
 
-    return resposta;
-  }
 }
-
-export { Prestador };

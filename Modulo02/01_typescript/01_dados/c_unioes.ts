@@ -1,12 +1,14 @@
-let empresa: string | undefined;
+// uniões permitem dados com diferentes possibilidades de tipos
+let empresa : string | undefined;
+empresa = 'Porto';      //ok
+empresa = undefined;    // ok
 
-empresa = 'Empresa A';
-empresa = undefined;
-
-let nota: number | number[] | Array<number>; // number | number[] | Array<number> é a mesma coisa
-
+let nota: number | number[] | Array<number>; // apenas number | number[]
 nota = 10;
-nota = [10, 9, 8];
+nota = [10, 8];
 
-let marcaVeiculo: 'Ford' | 'Chevrolet' | 'Fiat' | undefined;
-marcaVeiculo = "Fiat";
+// composição de tipos com valores pré-definidos
+let marcaVeiculo : "Ford" | "Hyundai" | "Honda" | undefined;
+marcaVeiculo = "Ford";  //ok
+
+

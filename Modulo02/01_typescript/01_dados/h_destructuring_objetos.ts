@@ -1,15 +1,22 @@
+
 let companhia = {
-  nome: "Caelum",
-  logradouro: "Rua Vergueiro 3185",
-  bairro: "Vila Mariana",
-  numero: 3185,
-  cidade: "São Paulo",
-};
+    nome: 'Porto Seguro',
+    logradouro: 'Rua Guaianases',
+    numero: 1238,
+    cidade: 'São Paulo'
+}
 
-let { nome, logradouro, bairro, numero, cidade } = companhia;
-
+let { nome, logradouro } = companhia;
 console.log(nome);
+console.log(logradouro);
 
-let { nome: descricao, logradouro: local, ...outros } = companhia;
+// podemos renomear (definir novos nomes a partir das propriedades originais) 
+// as propriedades a nosso favor
+let { nome: descricao, logradouro: local } = companhia;
+console.log(descricao);
+console.log(local);
 
-console.log(descricao, outros);
+// podemos também obter partes do objeto
+let { cidade, ...outrosDados} = companhia;
+console.log(cidade);
+console.log(outrosDados);

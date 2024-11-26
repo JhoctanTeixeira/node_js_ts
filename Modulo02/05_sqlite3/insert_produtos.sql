@@ -1,0 +1,3 @@
+INSERT INTO TB_PRODUTOS (DESCRICAO, PRECO_UNITARIO) VALUES
+('Teclado Wireless', 200),
+('Caixa de Papelao', 100)

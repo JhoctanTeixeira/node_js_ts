@@ -1,0 +1,16 @@
+{
+  "name": "g_exercicio3_di",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/lodash": "^4.17.13",
+    "lodash": "^4.17.21"
+  }
+}

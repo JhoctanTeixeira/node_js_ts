@@ -1,12 +1,11 @@
-import { ResponseCPF } from "../interfaces/responseCpf";
+import { ResponseCPF } from "../interfaces/responsecpf";
 
 export class Utilitarios {
-  public static async validarCpf(cpf: string): Promise<ResponseCPF> {
+    public static async validarCPF(cpf: string) : Promise<ResponseCPF> {
+        const url = "https://emiliocelso-porto.azurewebsites.net/v1/validation";
+        let resposta = await fetch(`${url}/${cpf}`);
+        let json = await resposta.json();
 
-    const url = "https://emiliocelso-porto.azurewebsites.net/v1/validation";
-    let response = fetch(`${url}/${cpf}`);
-    let json = (await response).json();
-
-    return json;
-  }
+        return json;
+    }
 }

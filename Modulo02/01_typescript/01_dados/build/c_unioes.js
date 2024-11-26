@@ -1,9 +1,11 @@
 "use strict";
+// uniões permitem dados com diferentes possibilidades de tipos
 let empresa;
-empresa = 'Empresa A';
-empresa = undefined;
-let nota; // number | number[] | Array<number> é a mesma coisa
+empresa = 'Porto'; //ok
+empresa = undefined; // ok
+let nota; // apenas number | number[]
 nota = 10;
-nota = [10, 9, 8];
+nota = [10, 8];
+// composição de tipos com valores pré-definidos
 let marcaVeiculo;
-marcaVeiculo = "Fiat";
+marcaVeiculo = "Ford"; //ok

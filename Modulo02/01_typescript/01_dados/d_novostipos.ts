@@ -1,30 +1,40 @@
+// é possívem definirmos novas estruturas para dados com comportamentos comuns
 type str = string | null;
 type n = number;
-type dispositivo = "PC" | "Tablet" | "Celular";
+type dispositivo = "PC" | "Laptop" | "Celular";
 
-
-export { imovel };
-
+export { imovel }
 type imovel = {
-  area: n;
-  local: str;
-  dispVenda?: boolean;
+    area: number,
+    local: string,
+    dispVenda?: boolean     // opcional
 };
 
 type filtro = (busca: string) => boolean;
 
-let nomes = ["Ana", "Bia", "Carlos", "Daniel"];
-
-let buscarNome: filtro = (item) => item.startsWith("A");
+// exemplos de utilização
+let nomes = ['Jose', 'Jorge', 'Amanda', 'Patricia'];
+let buscarNome : filtro = item => item.startsWith('A');
 
 function executar() {
-  nomes.forEach((elemento) => {
-    if (buscarNome(elemento)) {
-      console.log(`Nome encontrado: ${elemento}`);
-    }
-  });
+    nomes.forEach(elemento => {
+        if(buscarNome(elemento)){
+            console.log(`Nome encontrado: ${elemento}`);
+        }
+    });
 }
 
-// let descricao
+let descricao : str = "Abordagem sobre tipos no Typescript";    // OK
+let duracao: n = 10;
+let disp : dispositivo = "Celular";
+
+let casa : imovel = {
+    area: 120, local: 'São Paulo', dispVenda: true
+}
+
 
 executar();
+console.log(descricao);
+console.log(duracao);
+console.log(disp);
+console.log(casa);

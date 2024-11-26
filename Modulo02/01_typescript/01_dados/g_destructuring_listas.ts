@@ -1,26 +1,26 @@
 import { AreaPorComodo } from "./f_conjuntos";
 
-// Considere uma lista de departamentos de uma empresa
-let deptos: string[] = ["RH", "TI", "Financeiro", "Compras", "Vendas"];
+// considere uma lista de departamentos de uma empresa
+let deptos: string[] = ['Contabilidade', 'Financeiro', 'Preços', 'Marketing'];
 
-// podemos abrir a lista em variaveis separadas
-let [rh, ti, financeiro, compras, vendas] = deptos;
+// podemos 'abrir' esta lista em quatro variáveis: destructuring
+let [cont, fnc, pc, mkt] = deptos;
 
-let [preco, ...resto] = [100, 200, 300, 400, 500];
+// podemos criar uma lista com o restante (rest) dos valores
+let [preco, ...demaisPrecos] = [120, 90, 45, 32];
+console.log(preco);
+console.log(demaisPrecos);
 
-console.log(rh);
-console.log(preco, resto);
+// podemos obter partes da lista (util em passagem de parâmetros)
+let [preco1, preco2] = [120, 90, 45, 32];
 
-let [preco1, preco2] = [100, 200, 300, 400];
+// embora pouco usado, também é útil na passagem de parâmetros
+let [ ,preco3, , preco4] = [120, 90, 45, 32];
 
-// pouco usado mas util na passagem de parametros
-
-let [, preco3, , preco4] = [100, 200, 300, 400];
-
-
-console.log(preco3, preco4);
-
-let varanda: AreaPorComodo = ["varanda", 10];
+// podemos proceder com destructuring em tuplas
+let varanda: AreaPorComodo = ['Varanda', 15];
 let [comodo, area, ...outras] = varanda;
 
-console.log(comodo, area, outras);
+console.log(comodo);
+console.log(area);
+console.log(outras);

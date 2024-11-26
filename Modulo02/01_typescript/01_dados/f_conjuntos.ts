@@ -1,44 +1,48 @@
 import { imovel } from "./d_novostipos";
 
+// listas simples: podem ser de quaisquer tipos, incluindo os tipos definidos
 let casa1: imovel = {
-  area: 56,
-  local: "Taubate",
-  dispVenda: true,
-};
+    area: 56, local: 'Taubaté', dispVenda: true
+}
 let casa2: imovel = {
-  area: 90,
-  local: "Jacarei",
-  dispVenda: false,
-};
+    area: 90, local: 'Jacareí', dispVenda: false
+}
 let casa3: imovel = {
-  area: 56,
-  local: "Sao Paulo",
-  dispVenda: true,
-};
+    area: 100, local: 'São Paulo', dispVenda: true
+}
 
 let imoveis: imovel[] = [casa1, casa2, casa3];
-
 console.log(imoveis);
 
 // tupla
-// possuem como caracateristica a estrutura fixa em relacao aos arrays
-// dependendo da utilizacao podem ser confudidas com listas (arrays)
+// possuem como característica a estrutura fixa em relação aos arrays.
+// Dependendo da utilização, elas podem ser confundidas com listas (arrays)
 
-let cursos: [number, string] = [1, "typescript"];
-cursos.push(2, "javascript");
+// Exemplo: tupla representando o codigo e a descrição de cursos.
+let cursos: [number, string] = [100, ".NET Core"];
+cursos.push(200, 'Java');
+cursos.push('Azure DevOps');
 
 console.log(cursos);
 
-let c1 = cursos[0];
-let d1 = cursos[1];
-let c2 = cursos[cursos.length - 2];
-let d2 = cursos[cursos.length - 1];
+let c1 = cursos[0]
+let d1 = cursos[1]
+let c2 = cursos[cursos.length - 2]
+let d2 = cursos[cursos.length - 1]
 
-//  ---------------------------
-export { AreaPorComodo };
+//---------------------------------------------
+// tuplas fazem mais sentido quando definimos novos tipos
+// Exemplo: definição de área por comodo de uma casa
+export { AreaPorComodo }
 type AreaPorComodo = [string, number];
-let cozinha: AreaPorComodo = ["cozinha", 12];
+let cozinha: AreaPorComodo = ['Cozinha', 20];
 
-let comodos: AreaPorComodo[] = [cozinha, ["sala", 20], ["quarto", 15]];
-
+let comodos: AreaPorComodo[] = [cozinha, ['Sala', 15], ['Banheiro', 8]];
 console.log(comodos);
+
+
+
+
+
+
+

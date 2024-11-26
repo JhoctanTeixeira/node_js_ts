@@ -1,5 +1,5 @@
 "use strict";
-let binario = 0b1010; // 10
-let octal = 0o12; // 10
-let hexadecimal = 0xA; // 10
-console.log(`binario: ${binario}, octal: ${octal}, hexadecimal: ${hexadecimal}`); // binario: 10, octal: 10, hexadecimal: 10
+let binario = 0b100101110;
+let octal = 0o7764;
+let hexa = 0xff32ca;
+console.log(`binário: ${binario}, octal: ${octal}, hexadecimal: ${hexa}`);

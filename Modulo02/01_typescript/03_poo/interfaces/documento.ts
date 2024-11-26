@@ -1,6 +1,5 @@
-interface IDocumento {
-  set documento(d: string);
-  get documento(): string;
-}
+export interface IDocumento {
 
-export { IDocumento };
+    set documento(v:  string);
+    get documento() : string;
+}
